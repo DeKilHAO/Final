@@ -8,7 +8,7 @@ public class test {
     public void Test() throws IOException {
         RankingSystem rs=new RankingSystem();
         rs.init();
-        rs.simulation();
+        rs.rank();
     }
     
     public static void main(String[] args)  
@@ -28,3 +28,4 @@ public class test {
 		}
 	}	
 }
+
