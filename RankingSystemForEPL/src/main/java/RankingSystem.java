@@ -104,9 +104,9 @@ public class RankingSystem {
     					totalScore += matchResult.get(i);
     				}
     				double averageScore = totalScore/matchResult.size();
-    				//Assume the totalwin satisfies Normal Distribution
-    				int simulationScore = Integer.parseInt(String.valueOf(Math.round(random.nextGaussian()* Math.sqrt(1)+averageScore)));
-    				//System.out.println(team.TeamName+" "+opponentTeam.TeamName+" "+simulationScore);
+
+    				int simulationScore = normalDistributionFunction(averageScore);
+    				
     				String output=team.TeamName+","+opponentTeam.TeamName+","+simulationScore;
     				writecsv(WritefilePath,output);
     				if(simulationScore > 0) {
@@ -132,6 +132,13 @@ public class RankingSystem {
 	    	{
 	    		System.out.println(i+1+". "+teamList.getTeamList().get(i).TeamName+" "+teamList.getTeamList().get(i).totalpoint+" "+teamList.getTeamList().get(i).totalWin);
 	    	}
+    }
+    
+    public int normalDistributionFunction(double averageScore) {
+    	int simulationScore = 0;
+    	simulationScore = Integer.parseInt(String.valueOf(Math.round(random.nextGaussian()* Math.sqrt(1)+averageScore)));
+    	
+    	return simulationScore;
     }
 
     public void writecsv(String filePath, String line) throws IOException
