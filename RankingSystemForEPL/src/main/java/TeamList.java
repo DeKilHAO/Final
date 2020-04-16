@@ -44,7 +44,7 @@ public class TeamList {
                 if (o1.totalpoint-o2.totalpoint!=0)
                     return o2.totalpoint-o1.totalpoint;
                 else
-                    return o2.totalWin-o1.totalWin;
+                    return o2.totalGoalDifference -o1.totalGoalDifference;
             }
         });
     }
