@@ -1,3 +1,5 @@
+import javax.lang.model.element.NestingKind;
+import java.awt.List;
 import java.io.*;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -6,17 +8,14 @@ import java.util.Random;
 public class RankingSystem {
     static TeamList teamList;
     Random random = new Random();
-    String WritefilePath1;
-    String WritefilePath2;
+    String WritefilePath;
     String Path;
 
     public RankingSystem() {
         this.teamList=new TeamList();
         this.Path=Paths.get("E0.csv").toAbsolutePath().toString();
-        WritefilePath1 =Path.substring(0,Path.length()-6)+"output.csv";
-        WritefilePath2=Path.substring(0,Path.length()-6)+"finalrank.csv";
-        clearcsv(WritefilePath1);
-        clearcsv(WritefilePath2);
+        WritefilePath=Path.substring(0,Path.length()-6)+"output.csv";
+        clearcsv(WritefilePath);
     }
 
     public void init() throws IOException
@@ -62,8 +61,8 @@ public class RankingSystem {
                     t1.totalpoint+=1;
                     t2.totalpoint+=1;
                 }
-                t1.totalGoalDifference +=Integer.valueOf(info[2])-Integer.valueOf(info[3]);
-                t2.totalGoalDifference +=Integer.valueOf(info[3])-Integer.valueOf(info[2]);
+                t1.totalWin+=Integer.valueOf(info[2])-Integer.valueOf(info[3]);
+                t2.totalWin+=Integer.valueOf(info[3])-Integer.valueOf(info[2]);
                 
                 ArrayList<Integer> t1GoalDifference = new ArrayList<Integer>();
                 ArrayList<Integer> t2GoalDifference = new ArrayList<Integer>();
@@ -84,17 +83,16 @@ public class RankingSystem {
             e.printStackTrace();
         }
         teamList.sort();
-        System.out.println("Rank-Team-Points-Total Goal Difference");
+        System.out.println("Rank-Team-Points-TotalWin");
         for(int i=0;i<teamList.getTeamList().size();i++)
 	    	{
-	    		System.out.println(i+1+". "+teamList.getTeamList().get(i).TeamName+"  "+teamList.getTeamList().get(i).totalpoint+"  "+teamList.getTeamList().get(i).totalGoalDifference);
+	    		System.out.println(i+1+". "+teamList.getTeamList().get(i).TeamName+" "+teamList.getTeamList().get(i).totalpoint+" "+teamList.getTeamList().get(i).totalWin);
 	    	}
     }
     
     public void simulation() throws IOException {
     	rank();
-        writecsv(WritefilePath1,"Team1,Team2,Goal Difference");
-        writecsv(WritefilePath2,"Rank,Team Name,Total point,Total Goal Difference");
+        writecsv(WritefilePath,"Team1,Team2,TotalWin");
     	for(Team team : teamList.getTeamList()) {
     		for(Team opponentTeam : team.matches.keySet()) {
     			ArrayList<Integer> matchResult = new ArrayList<Integer>();
@@ -110,7 +108,7 @@ public class RankingSystem {
     				int simulationScore = normalDistributionFunction(averageScore);
     				
     				String output=team.TeamName+","+opponentTeam.TeamName+","+simulationScore;
-    				writecsv(WritefilePath1,output);
+    				writecsv(WritefilePath,output);
     				if(simulationScore > 0) {
     					team.totalpoint += 3;
     				}else if(simulationScore < 0) {
@@ -120,8 +118,8 @@ public class RankingSystem {
     					opponentTeam.totalpoint += 1;
     				}
     				
-    				team.totalGoalDifference += simulationScore;
-    				opponentTeam.totalGoalDifference -= simulationScore;
+    				team.totalWin += simulationScore;
+    				opponentTeam.totalWin -= simulationScore;
     				
     				team.matches.get(opponentTeam).add(simulationScore);
     				opponentTeam.matches.get(team).add(-simulationScore);
@@ -129,12 +127,10 @@ public class RankingSystem {
     		}
     	}
     	teamList.sort();
-        System.out.println("Rank-Team-Points-Total Goal Difference");
+        System.out.println("Rank-Team-Points-TotalWin");
         for(int i=0;i<teamList.getTeamList().size();i++)
 	    	{
-	    		System.out.println(i+1+". "+teamList.getTeamList().get(i).TeamName+"  "+teamList.getTeamList().get(i).totalpoint+"  "+teamList.getTeamList().get(i).totalGoalDifference);
-	    		String line=i+1+","+teamList.getTeamList().get(i).TeamName+","+teamList.getTeamList().get(i).totalpoint+","+teamList.getTeamList().get(i).totalGoalDifference;
-	    		writecsv(WritefilePath2,line);
+	    		System.out.println(i+1+". "+teamList.getTeamList().get(i).TeamName+" "+teamList.getTeamList().get(i).totalpoint+" "+teamList.getTeamList().get(i).totalWin);
 	    	}
     }
     
@@ -151,6 +147,7 @@ public class RankingSystem {
             FileWriter writer=new FileWriter(filePath,true);
             writer.write(line);
             writer.write("\n");
+           // writer.flush();
             writer.close();
         }
         catch (FileNotFoundException e){

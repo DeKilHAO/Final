@@ -1,93 +1,93 @@
-Team1,Team2,Goal Difference
-Liverpool,Man City,2
-Liverpool,Newcastle,4
-Liverpool,Arsenal,1
-Liverpool,Crystal Palace,2
-Liverpool,Burnley,5
-Liverpool,Everton,2
+Team1,Team2,TotalWin
 Liverpool,Chelsea,1
+Liverpool,Everton,3
+Liverpool,Crystal Palace,-1
+Liverpool,Arsenal,2
 Liverpool,Aston Villa,1
-Liverpool,Brighton,0
-Man City,Newcastle,0
+Liverpool,Man City,2
+Liverpool,Newcastle,1
+Liverpool,Burnley,1
+Liverpool,Brighton,2
+Man City,Chelsea,1
+Man City,Southampton,1
 Man City,Arsenal,2
-Man City,Norwich,-1
-Man City,Southampton,0
-Man City,Burnley,3
-Man City,Chelsea,2
+Man City,Norwich,-2
+Man City,Watford,6
+Man City,Newcastle,0
 Man City,Bournemouth,2
-Man City,Brighton,3
-Man City,Watford,8
-Leicester,Tottenham,0
-Leicester,Arsenal,1
-Leicester,Crystal Palace,2
-Leicester,Everton,2
-Leicester,Bournemouth,3
-Leicester,Man United,-2
-Leicester,Brighton,4
-Leicester,Watford,2
+Man City,Burnley,2
+Man City,Brighton,5
+Leicester,Everton,1
+Leicester,Tottenham,1
+Leicester,Crystal Palace,1
 Leicester,Sheffield United,1
-Chelsea,West Ham,-1
-Chelsea,Wolves,3
-Chelsea,Norwich,1
+Leicester,Arsenal,1
+Leicester,Man United,-2
+Leicester,Watford,2
+Leicester,Bournemouth,1
+Leicester,Brighton,2
+Chelsea,West Ham,-3
 Chelsea,Crystal Palace,2
+Chelsea,Sheffield United,0
+Chelsea,Wolves,4
+Chelsea,Norwich,1
 Chelsea,Aston Villa,1
 Chelsea,Watford,2
-Chelsea,Sheffield United,1
 Man United,Tottenham,2
-Man United,West Ham,-2
+Man United,West Ham,-1
 Man United,Crystal Palace,-2
-Man United,Southampton,-1
-Man United,Bournemouth,-2
-Man United,Aston Villa,0
-Man United,Brighton,2
 Man United,Sheffield United,1
+Man United,Southampton,-2
+Man United,Aston Villa,-2
+Man United,Bournemouth,0
+Man United,Brighton,2
+Wolves,Everton,-2
 Wolves,West Ham,2
-Wolves,Arsenal,0
-Wolves,Crystal Palace,0
-Wolves,Burnley,-2
-Wolves,Everton,0
-Wolves,Bournemouth,3
-Wolves,Aston Villa,2
+Wolves,Crystal Palace,1
 Wolves,Sheffield United,0
-Sheffield United,Tottenham,-1
-Sheffield United,Newcastle,-2
-Sheffield United,Southampton,0
+Wolves,Arsenal,1
+Wolves,Aston Villa,1
+Wolves,Bournemouth,-1
+Wolves,Burnley,-2
 Sheffield United,Everton,1
-Sheffield United,Burnley,2
-Sheffield United,Aston Villa,0
-Tottenham,Newcastle,0
+Sheffield United,Tottenham,1
+Sheffield United,Southampton,-1
+Sheffield United,Aston Villa,1
+Sheffield United,Newcastle,-2
+Sheffield United,Burnley,4
+Tottenham,Everton,0
 Tottenham,West Ham,1
+Tottenham,Crystal Palace,3
 Tottenham,Arsenal,0
-Tottenham,Crystal Palace,5
-Tottenham,Everton,1
-Tottenham,Bournemouth,2
-Arsenal,Norwich,-1
+Tottenham,Newcastle,-3
+Tottenham,Bournemouth,0
 Arsenal,Southampton,0
-Arsenal,Aston Villa,0
-Arsenal,Brighton,1
+Arsenal,Aston Villa,1
+Arsenal,Norwich,0
 Arsenal,Watford,1
+Arsenal,Brighton,-4
 Burnley,West Ham,3
-Burnley,Norwich,1
-Burnley,Crystal Palace,-2
+Burnley,Crystal Palace,-3
+Burnley,Norwich,3
+Burnley,Watford,1
 Burnley,Brighton,0
-Burnley,Watford,5
-Crystal Palace,Bournemouth,2
-Crystal Palace,Aston Villa,1
-Everton,Norwich,-2
-Everton,Southampton,1
+Crystal Palace,Aston Villa,0
+Crystal Palace,Bournemouth,1
+Everton,Southampton,0
+Everton,Aston Villa,0
+Everton,Norwich,-1
 Everton,Bournemouth,-3
-Everton,Aston Villa,-2
-Newcastle,West Ham,1
-Newcastle,Bournemouth,1
-Newcastle,Aston Villa,-3
-Newcastle,Brighton,2
-Newcastle,Watford,1
-Southampton,Norwich,2
-Southampton,Bournemouth,-2
-Southampton,Brighton,2
-Southampton,Watford,1
-Brighton,Norwich,1
+Newcastle,West Ham,0
+Newcastle,Aston Villa,-2
+Newcastle,Watford,0
+Newcastle,Bournemouth,-1
+Newcastle,Brighton,-1
+Southampton,Norwich,1
+Southampton,Watford,2
+Southampton,Bournemouth,-3
+Southampton,Brighton,1
+Brighton,Norwich,2
 West Ham,Norwich,2
-West Ham,Aston Villa,-1
-West Ham,Watford,4
-Watford,Norwich,1
+West Ham,Aston Villa,2
+West Ham,Watford,2
+Watford,Norwich,3
